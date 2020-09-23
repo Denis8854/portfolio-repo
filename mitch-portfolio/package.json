@@ -1,37 +1,25 @@
 {
-  "name": "mitch-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "dotenv": "^8.2.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
+  "name": "Denis8854",
+  "version": "1.0.0",
+  "description": "a token hider using netlify functions",
+  "main": "app.js",
   "scripts": {
-    "start": "react-scripts start",
-    "prebuild": "echo $REACT_APP_WEATHER_KEY",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run site:build && npm run lambda:build",
+    "site:dev": "node server.js",
+    "site:build": "parcel build src/site/index.html --public-url ./",
+    "lambda:dev": "netlify-lambda serve src/lambda",
+    "lambda:build": "netlify-lambda build src/lambda"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "author": "Dennis Padiernos",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "http-proxy-middleware": "^0.18.0",
+    "netlify-lambda": "^0.2.1",
+    "parcel-bundler": "^1.7.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
